@@ -10,15 +10,12 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     Clinic.init({
-        email: DataTypes.STRING,
-        firstName: DataTypes.STRING,
-        lastName: DataTypes.STRING,
         address: DataTypes.STRING,
-        gender: DataTypes.BOOLEAN,
-        roleid: DataTypes.STRING
+        description: DataTypes.TEXT,
+        image: DataTypes.STRING,
     }, {
         sequelize,
         modelName: 'Clinic',
     });
-    return clinic;
+    return Clinic;
 };
