@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
-    Allcode.init({
+    Schedule.init({
         key: DataTypes.STRING,
         type: DataTypes.STRING,
         value_en: DataTypes.STRING,
