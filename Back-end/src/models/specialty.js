@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 
     //Chuyên khoa
     Specialty.init({
+        name: DataTypes.STRING,
         description: DataTypes.TEXT,
         image: DataTypes.STRING,
     }, {
