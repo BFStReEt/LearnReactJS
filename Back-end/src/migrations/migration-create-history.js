@@ -2,29 +2,21 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         //addcolumn de sua bang
-        await queryInterface.createTable('history', {
-            // key: DataTypes.STRING,
-            // type: DataTypes.STRING,
-            // value_en: DataTypes.STRING,
-            // value_vi: DataTypes.STRING,
-
+        await queryInterface.createTable('histories', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            key: {
-                type: Sequelize.STRING
+            patientId: {
+                type: Sequelize.INTEGER
             },
-            type: {
-                type: Sequelize.STRING
+            doctorId: {
+                type: Sequelize.INTEGER
             },
-            valueEn: {
-                type: Sequelize.STRING
-            },
-            valueVi: {
-                type: Sequelize.STRING
+            description: {
+                type: Sequelize.TEXT
             },
 
             createdAt: {
@@ -38,6 +30,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('allcodes');
+        await queryInterface.dropTable('histories');
     }
 };

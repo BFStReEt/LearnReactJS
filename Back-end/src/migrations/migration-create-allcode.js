@@ -3,17 +3,13 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
         //addcolumn de sua bang
         await queryInterface.createTable('allcodes', {
-            // key: DataTypes.STRING,
-            // type: DataTypes.STRING,
-            // value_en: DataTypes.STRING,
-            // value_vi: DataTypes.STRING,
-
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
+
             key: {
                 type: Sequelize.STRING
             },

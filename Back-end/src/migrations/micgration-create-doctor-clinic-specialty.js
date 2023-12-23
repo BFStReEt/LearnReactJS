@@ -2,26 +2,21 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         //addcolumn de sua bang
-        await queryInterface.createTable('schedules', {
+        await queryInterface.createTable('doctor_clinic_specialty', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            currentNumber: {
-                type: Sequelize.INTEGER
-            },
-            maxNumber: {
-                type: Sequelize.INTEGER
-            },
-            date: {
-                type: Sequelize.DATE
-            },
-            timeType: {
-                type: Sequelize.STRING
-            },
+            
             doctorId: {
+                type: Sequelize.INTEGER
+            },
+            clinicId: {
+                type: Sequelize.INTEGER
+            },
+            specialtyId: {
                 type: Sequelize.INTEGER
             },
 
@@ -36,6 +31,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('schedules');
+        await queryInterface.dropTable('doctor_clinic_specialty');
     }
 };
