@@ -8,4 +8,7 @@ npm install --save mysql2@2.2.5
 npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 
+npm install --save bcryptjs@2.4.3
+npm install --save bcrypt@5.0.1 
+
 Front-end
