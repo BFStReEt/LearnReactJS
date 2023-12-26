@@ -37,7 +37,7 @@ module.exports = {
       positionId: {
         type: Sequelize.STRING
       },
-      imgae: {
+      image: {
         type: Sequelize.STRING
       },
 
