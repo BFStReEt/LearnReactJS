@@ -9,13 +9,12 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     };
+
+    //Chuyên khoa
     Specialty.init({
-        email: DataTypes.STRING,
-        firstName: DataTypes.STRING,
-        lastName: DataTypes.STRING,
-        address: DataTypes.STRING,
-        gender: DataTypes.BOOLEAN,
-        roleid: DataTypes.STRING
+        name: DataTypes.STRING,
+        description: DataTypes.TEXT,
+        image: DataTypes.STRING,
     }, {
         sequelize,
         modelName: 'Specialty',
