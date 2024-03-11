@@ -4,7 +4,7 @@ let handleLogin = (email, password) => {
     return new Promise(async (resolve, reject) => {
         try {
             let userData = {};
-            
+
             let isExit = await checkUserEmail(email);
 
             if (isExit) {
@@ -16,7 +16,7 @@ let handleLogin = (email, password) => {
                 //return error
                 userData.errCode = 1;
                 userData.errMassage = `Your's Email isn't exits in your system. Please try other mail!`
-                resolve();
+                resolve(userData);
             }
         } catch (e) {
             reject(e);
