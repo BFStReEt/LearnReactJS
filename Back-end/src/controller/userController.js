@@ -17,6 +17,8 @@ let handleLogin = async (req, res) => {
     // Return userInfor
     // Access_token: JWT json web token
     return res.status(200).json({
+        errCode: userData.errCode,
+        message: userData.errMassage,
         userData
     })
 }

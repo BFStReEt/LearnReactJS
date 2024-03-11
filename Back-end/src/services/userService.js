@@ -10,6 +10,12 @@ let handleLogin = (email, password) => {
             if (isExit) {
                 //user already exist
                 //compare password
+                let user = await db.User.findOne({
+                    where: { email: email }
+                });
+                if (user) {
+                    //compare password
+                }
                 resolve();
             }
             else {
@@ -23,6 +29,19 @@ let handleLogin = (email, password) => {
         }
     })
 }
+
+let compareUserPassword = () => {
+    return new Promise((resolve, reject) => {
+        try {
+
+        }
+        catch (e) {
+            reject(e);
+        }
+    })
+}
+
+
 
 let checkUserEmail = (userEmail) => {
     return new Promise(async (resolve, reject) => {
