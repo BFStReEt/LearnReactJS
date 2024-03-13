@@ -18,8 +18,8 @@ let handleLogin = async (req, res) => {
     // Access_token: JWT json web token
     return res.status(200).json({
         errCode: userData.errCode,
-        message: userData.errMassage,
-        userData
+        message: userData.errMessage,
+        user: userData.user ? userData.user : {}
     })
 }
 
