@@ -12,6 +12,7 @@ let handleLogin = async (req, res) => {
     }
 
     let userData = await userService.handleLogin(email, password);
+    console.log(userData)
     // Check email exist
     // Compare password
     // Return userInfor
