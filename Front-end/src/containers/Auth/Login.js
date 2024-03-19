@@ -30,6 +30,7 @@ class Login extends Component {
         })
         //Console cho thấy sự thay đổi của password
         // console.log(event.target.value)
+        //Value
     }
 
     //Funtion login
