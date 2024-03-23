@@ -13,6 +13,7 @@ class Login extends Component {
             username: '',
             password: '',
             isShowPassword: false,
+            errMessage: ''
         }
     }
     //Hàm thay đổi của username
@@ -35,14 +36,17 @@ class Login extends Component {
 
     //Funtion login
     handleLogin = async () => {
-        console.log('username: ', this.state.username, 'password :', this.state.password)
+        this.setState({
+            errMessage: ''
+        })
 
-        console.log('all state', this.state)
         try {
-
             await handleLoginApi(this.state.username, this.state.password);
         } catch (e) {
             console.log(e);
+            this.setState({
+                errMessage: e.errMessage
+            })
         }
     }
 
@@ -83,6 +87,9 @@ class Login extends Component {
                                     onClick={(event) => { this.handleShowHidePassword(event) }}>
                                     <i className={this.state.isShowPassword ? 'far fa-eye' : 'fas fa-eye-slash'} ></i></span>
                             </div>
+                        </div>
+                        <div className='col-12' style={{ color: 'red' }}>
+                            {this.state.errMessage}
                         </div>
 
                         <div className='col-12'>
