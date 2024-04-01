@@ -39,14 +39,20 @@ class Login extends Component {
         this.setState({
             errMessage: ''
         })
-
         try {
-            await handleLoginApi(this.state.username, this.state.password);
-        } catch (e) {
-            console.log(e);
-            this.setState({
-                errMessage: e.errMessage
-            })
+            let data = await handleLoginApi(this.state.username, this.state.password).then(res => {
+                console.log('BFStReEt', res)
+            });
+        } catch (error) {
+            if (error.response) {
+                if (error.response.data) {
+                    this.setState({
+                        errMessage: error.response.data.message
+                    })
+                }
+            }
+            console.log('BFStReEt ', error.response)
+
         }
     }
 
