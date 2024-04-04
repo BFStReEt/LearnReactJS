@@ -7,11 +7,11 @@ const initialState = {
 
 const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.ADMIN_LOGIN_SUCCESS:
+        case actionTypes.USER_LOGIN_SUCCESS:
             return {
                 ...state,
                 isLoggedIn: true,
-                adminInfo: action.adminInfo
+                adminInfo: action.userInfo
             }
         case actionTypes.ADMIN_LOGIN_FAIL:
             return {
